@@ -1,0 +1,18 @@
+
+
+@import "sidebar";
+@import "custom-bootstrap";
+@import "btn-circle";
+
+/*
+*
+* ==========================================
+* Site css
+* ==========================================
+*
+*/
+.ellipsis {  
+  overflow: hidden;
+  white-space: nowrap;  
+  text-overflow: ellipsis; 
+}          
