@@ -1,3 +1,217 @@
+/*
+*
+* ==========================================
+* Custom Bootstrap Sidebar
+* ==========================================
+*
+*/
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/templates/simple-sidebar)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+body {
+  background-color: #f4f1f1;
+  font-family: 'Assistant', sans-serif;
+  font-family: 'Encode Sans Semi Expanded', sans-serif;
+  font-family: 'Work Sans', sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.875rem;
+  font-size: 14px;
+  color: #495057;
+}
+
+#wrapper {
+  overflow-x: hidden;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #wrapper {
+    margin-left: 0;
+  }
+  #wrapper #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+  #wrapper #wrapper.toggled #sidebar-wrapper {
+    margin-left: -6rem;
+  }
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -6rem;
+  -webkit-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+  background-color: #1d1919;
+  text-align: center;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.90rem 1.25rem;
+  font-size: 2.1rem;
+  background-color: #199958;
+}
+
+#sidebar-wrapper .sidebar-heading .logo {
+  color: #1d1919;
+}
+
+#sidebar-wrapper .sidebar-heading span {
+  color: white;
+}
+
+#sidebar-wrapper .list-group {
+  width: 100%;
+  margin-top: 60px;
+}
+
+#sidebar-wrapper .list-group-item-action {
+  color: white;
+}
+
+#sidebar-wrapper a:hover {
+  background-color: #E5554C;
+}
+
+#sidebar-wrapper .list-group-item {
+  padding: 1rem 0.4rem 0.4rem 0rem;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  font-size: 13px;
+}
+
+#sidebar-wrapper .fa {
+  padding-bottom: 0.3rem;
+  font-size: 24px;
+  display: block;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#page-content-wrapper .navbar {
+  background-color: white;
+}
+
+#page-content-wrapper .navbar .navbar-toggler-icon {
+  font-size: 21px;
+  margin-top: -7px;
+}
+
+#page-content-wrapper .navbar-toggler {
+  background-color: #f8b739;
+}
+
+#page-content-wrapper .navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+#page-content-wrapper .navbar-toggler-dark {
+  background-color: #1d1919;
+  display: block;
+}
+
+#page-content-wrapper button:focus {
+  outline: none;
+}
+
+#page-content-wrapper .btn:focus, #page-content-wrapper .btn.focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.table {
+  color: inherit;
+}
+
+.table-hover tbody tr:hover {
+  color: #212529;
+  background-color: #f4f1f1;
+}
+
+.table th, .table thead th {
+  border: 0px solid #dee2e6;
+}
+
+.table td {
+  border-top: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.table td:last-child {
+  padding: 0;
+}
+
+.card {
+  border-radius: 0;
+  border: 0;
+}
+
+.card-header {
+  padding: 0.75rem 1.25rem 0rem 1.25rem;
+  background-color: white;
+}
+
+.hd-fa-x {
+  font-size: 1.312em;
+}
+
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+.btn-circle {
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.btn-circle i {
+  position: relative;
+  top: -1px;
+}
+
+.btn-circle-sm {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 0.9rem;
+}
+
+.btn-circle-lg {
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  font-size: 1.1rem;
+}
+
+.btn-circle-xl {
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  font-size: 1.3rem;
+}
+
+/*
+*
+* ==========================================
+* Site css
+* ==========================================
+*
+*/
 .ellipsis {
   overflow: hidden;
   white-space: nowrap;

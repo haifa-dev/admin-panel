@@ -1,9 +1,17 @@
+
+/*
+*
+* ==========================================
+* Custom Bootstrap Sidebar
+* ==========================================
+*
+*/
+
 /*!
  * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/templates/simple-sidebar)
  * Copyright 2013-2020 Start Bootstrap
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
  */
-
 
 
 
@@ -76,10 +84,11 @@ body{
   background-color: $haifadev-brown-dark;
   text-align: center;
   .sidebar-heading {
-    padding: 0.875rem 1.25rem;
+    padding: 0.90rem 1.25rem;
     font-size: 2.1rem;
     // color: $haifadev-green;
     background-color: $haifadev-green;
+
     .logo{
       color: $haifadev-text-dark;      
     }

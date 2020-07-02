@@ -4,10 +4,6 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import "fontawesome-4.7/css/font-awesome.css";
 
-import "./css/custom-bootstrap.css";
-import "./css/sidebar.css";
-import "./css/btn-circle.css";
-
 import "./css/site.css";
 
 import App from './App';
