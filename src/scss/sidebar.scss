@@ -1,0 +1,147 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/templates/simple-sidebar)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+
+
+
+
+$body-bg:#f4f1f1;
+$haifadev-green:#199958;
+$haifadev-brown-light:#f3f1f1;
+$haifadev-brown-dark:#1d1919;
+$haifadev-orange:#D47531;
+$haifadev-yellow-orange:#f8b739;
+$haifadev-hot-color:#E5554C;
+
+// text
+$haifadev-text-default: white;
+$haifadev-text-light: white;
+$haifadev-text-dark: $haifadev-brown-dark;
+
+// border
+$border:rgba(255, 255, 255, 0.8);
+$sidebar-border:rgba(255, 255, 255, 0.0);
+
+//toggler
+$haifadev-toggler-light:$haifadev-yellow-orange;
+$haifadev-toggler-dark:$haifadev-brown-dark;
+
+$haifadev-sidebar-width:6rem;
+$haifadev-sidebar-margin-big:15rem;
+$haifadev-sidebar-margin-small:6rem;
+$haifadev-sidebar-margin:$haifadev-sidebar-margin-small;
+
+body{ 
+  background-color:  $body-bg;
+  font-family: 'Assistant', sans-serif;
+  // font-family: 'Open Sans', sans-serif;
+  font-family: 'Encode Sans Semi Expanded', sans-serif;
+  font-family: 'Work Sans', sans-serif;
+  font-family:"Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  // font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  font-size: 0.875rem;
+  font-size: 14px;
+  color: #495057;
+}
+
+ #wrapper {
+    overflow-x: hidden;
+    &.toggled #sidebar-wrapper {
+      margin-left: 0;
+    }
+    @media (min-width: 768px) {
+      margin-left: 0;
+    
+      #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+      }
+    
+      #wrapper.toggled #sidebar-wrapper {
+        margin-left: -$haifadev-sidebar-margin;
+      }
+    }
+ }
+ 
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -$haifadev-sidebar-margin;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+  background-color: $haifadev-brown-dark;
+  text-align: center;
+  .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 2.1rem;
+    // color: $haifadev-green;
+    background-color: $haifadev-green;
+    .logo{
+      color: $haifadev-text-dark;      
+    }
+    span{      
+      color :$haifadev-text-light;
+    }
+  }
+  
+  .list-group {
+    width: 100%;
+    margin-top: 60px;
+  }
+
+  .list-group-item-action{
+    color:$haifadev-text-light;
+  }
+  a:hover {   
+    // color: white;
+    background-color: $haifadev-hot-color; 
+  }
+  .list-group-item{ 
+    padding: 1rem 0.4rem 0.4rem 0rem;
+    // padding: 0.5rem 0.5rem;
+    background-color: transparent;
+    border-bottom: 1px solid $sidebar-border;
+    font-size:13px;   
+  }
+  .fa{
+    padding-bottom: 0.3rem;
+    font-size:24px;display: block; 
+  }
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+  .navbar{
+    background-color: white;
+    .navbar-toggler-icon{
+      font-size: 21px;
+      margin-top:-7px;
+    }  
+  }
+  .nav-link{
+    // color: #1d1919
+  }
+  .navbar-toggler{
+    background-color: $haifadev-toggler-light;
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+  }
+  
+  .navbar-toggler-dark{
+    background-color:$haifadev-toggler-dark;
+    display: block; 
+  }
+
+  button:focus{
+    outline:none;
+  }
+
+  .btn:focus, .btn.focus{
+    box-shadow:none
+  }
+}
