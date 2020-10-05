@@ -1,6 +1,6 @@
-# AdminPanel
+# Haifa:Dev / Admin Panel
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
+An admin panel to manage data for the Haifa:Dev website.
 
 ## Development server
 
