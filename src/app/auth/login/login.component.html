@@ -6,15 +6,28 @@
     <div class="login__header__secondary">developers community</div>
   </div>
   <div class="login__content">
-    <form class="form">
-      <label for=""><mat-icon>person_outline</mat-icon>Email</label>
+    <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <label for="login__email"><mat-icon>person_outline</mat-icon>Email</label>
       <mat-form-field appearance="outline">
-        <input matInput placeholder="i.e. example@example.com" />
-        <mat-error *ngIf="true">test</mat-error>
+        <input
+          id="login__email"
+          formControlName="email"
+          matInput
+          placeholder="i.e. example@example.com"
+        />
+        <mat-error *ngIf="form.get('email').invalid">{{
+          getErrorMessage(form.get('email'))
+        }}</mat-error>
       </mat-form-field>
-      <label for=""><mat-icon>lock_outline</mat-icon> Password</label>
+      <label for="login__password"><mat-icon>lock_outline</mat-icon> Password</label>
       <mat-form-field appearance="outline">
-        <input matInput placeholder="i.e. example@!%$5475347" [type]="hide ? 'password' : 'text'" />
+        <input
+          id="login__password"
+          formControlName="password"
+          matInput
+          placeholder="i.e. example@!%$5475347"
+          [type]="hide ? 'password' : 'text'"
+        />
         <button
           type="button"
           mat-icon-button
@@ -25,9 +38,33 @@
         >
           <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
         </button>
+        <mat-error *ngIf="form.get('password').invalid">{{
+          getErrorMessage(form.get('password'))
+        }}</mat-error>
       </mat-form-field>
       <div class="actions">
-        <button type="submit" class="submit-button" color="primary" mat-raised-button>Log In</button>
+        <button
+          disabled="loading"
+          type="submit"
+          class="submit-button"
+          color="primary"
+          mat-raised-button
+          style="position: relative"
+        >
+          Log In
+          <span
+            style="
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              z-index: 200;
+              display: inline;
+            "
+          >
+            <mat-spinner [diameter]="25"></mat-spinner>
+          </span>
+        </button>
       </div>
     </form>
   </div>

@@ -41,14 +41,22 @@
       letter-spacing: 0.44em;
       font-weight: 500;
     }
+
+    @media only screen and (max-width: 451px) {
+      font-size: 2rem;
+      &__secondary {
+        display: none;
+      }
+    }
   }
 
   &__content {
     background: white;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 8px;
     width: 100%;
     max-width: 23rem;
+    box-shadow: rgba(0, 0, 0, 0.9) 0 0 40px;
     .form {
       display: flex;
       flex-direction: column;
@@ -63,14 +71,25 @@
       color: #777;
     }
 
+    mat-form-field {
+      margin-bottom: 1rem;
+    }
+    // input {
+    //   height: 2rem;
+    //   font-size: 1.1rem;
+    //   &::placeholder {
+    //     font-size: 1.1rem;
+    //   }
+    // }
+
     .actions {
       display: flex;
       justify-content: center;
     }
     .submit-button {
-      padding: .3rem 1.5rem;
+      padding: 0.3rem 2rem;
       text-transform: capitalize;
-      letter-spacing: .1rem;
+      letter-spacing: 0.1rem;
     }
   }
 }
