@@ -1,0 +1,22 @@
+<div class="login">
+  <div class="content">
+    <form class="form">
+      <mat-form-field appearance="outline">
+        <mat-label>Credentials</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <div class="actions">
+        <button type="submit" class="submit-button" mat-raised-button color="primary">login</button>
+      </div>
+    </form>
+  </div>
+</div>
