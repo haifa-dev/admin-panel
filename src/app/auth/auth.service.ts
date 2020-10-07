@@ -70,4 +70,9 @@ export class AuthService {
       },
     });
   }
+
+  logout() {
+    this.cookieService.delete(this.cookieName);
+    window.location.href = '/';
+  }
 }
