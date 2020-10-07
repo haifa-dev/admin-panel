@@ -44,7 +44,7 @@
       </mat-form-field>
       <div class="actions">
         <button
-          disabled="loading"
+          [disabled]="inProgress"
           type="submit"
           class="submit-button"
           color="primary"
@@ -62,7 +62,7 @@
               display: inline;
             "
           >
-            <mat-spinner [diameter]="25"></mat-spinner>
+            <mat-spinner [ngClass]="{ hide: !inProgress }" [diameter]="25"></mat-spinner>
           </span>
         </button>
       </div>

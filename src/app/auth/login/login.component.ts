@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +11,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   hide = true;
-  loading = false;
+  inProgress = false;
   form = new FormGroup({
     email: new FormControl('', [
       Validators.email,
@@ -22,14 +25,34 @@ export class LoginComponent implements OnInit {
       Validators.maxLength(255),
     ]),
   });
-  constructor() {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {}
 
   onSubmit(): void {
     if (this.form.invalid) return;
-    this.loading = true;
-    console.log(this.form.value);
+    this.inProgress = true;
+    this.authService.login(this.form.value).subscribe({
+      next: () => {
+        this.inProgress = false;
+        this.router.navigateByUrl('/dashboard');
+      },
+      error: ({ error }) => {
+        this.inProgress = false;
+        let message = error.status ? error.message : 'Network Connection Error';
+
+        this.snackBar.open(message, null, {
+          duration: 3000,
+          panelClass: ['mat-toolbar', 'mat-warn'],
+        });
+
+        this.form.setErrors({ credentials: true });
+      },
+    });
   }
 
   getErrorMessage(formControl: FormControl) {
