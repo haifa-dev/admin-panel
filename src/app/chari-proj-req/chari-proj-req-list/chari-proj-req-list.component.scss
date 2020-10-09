@@ -1,0 +1,57 @@
+// const colors = ['#00AA55', '#009FD4', '#B381B3', '#939393', '#E3BC00', '#D47500', '#DC2A2A'];
+
+.card {
+  display: flex;
+  font-size: 0.9rem;
+  padding: 0.7rem 1rem;
+  border-bottom: 0.15rem solid black;
+  border-left: #008013 solid 0.26rem;
+
+  &:hover {
+    background: rgba(white, 0.1);
+  }
+
+  cursor: pointer;
+  .first-col {
+    .avatar {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #008013;
+      height: 1.8rem;
+      width: 1.8rem;
+      border-radius: 100%;
+      margin-right: 0.6rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+  }
+  .second-col {
+    .title,
+    .name {
+      font-weight: 500;
+    }
+    .title {
+      color: skyblue;
+    }
+
+    width: 14.2rem;
+    > * {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    font-weight: 300;
+  }
+  .third-col {
+    font-size: 0.7rem;
+    padding-left: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .time {
+      padding-left: 0.5rem;
+      color: skyblue;
+    }
+  }
+}

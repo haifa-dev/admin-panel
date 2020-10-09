@@ -1,0 +1,17 @@
+<ng-container *ngFor="let chariProjReq of chariProjReqs">
+  <div [routerLink]="chariProjReq.id" class="card">
+    <div class="first-col">
+      <div class="avatar">LA</div>
+    </div>
+    <div class="second-col">
+      <div class="name">{{ chariProjReq.name }}</div>
+      <div class="title">
+        {{ chariProjReq.email }}
+      </div>
+      <div class="description">{{ chariProjReq.description }}</div>
+    </div>
+    <div class="third-col">
+      <div class="time">Thu 8:04 Pm</div>
+    </div>
+  </div>
+</ng-container>

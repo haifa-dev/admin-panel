@@ -1,53 +1,11 @@
 <div class="dashboard">
-  <mat-toolbar class="dashboard__header">
-    <button
-      mat-mini-fab
-      class="dashboard__header__menu"
-      aria-label="Example icon-button with menu icon"
-    >
-      <mat-icon>menu</mat-icon>
-    </button>
-    <div class="dashboard__header__logo">
-      <span class="dashboard__header__logo--green"> haifa</span>:dev
-    </div>
-    <button
-      (click)="logout()"
-      mat-mini-fab
-      class="dashboard__header__logout-button"
-      aria-label="Example icon-button with menu icon"
-    >
-      <mat-icon>logout</mat-icon>
-    </button>
-  </mat-toolbar>
+  <app-toolbar></app-toolbar>
   <mat-drawer-container class="dashboard__container">
-    <mat-drawer class="dashboard__container__sidebar" mode="side" opened>
-      <div>
-        <button
-          mat-raised-button
-          type="submit"
-          class="submit-button"
-          color="primary"
-          mat-raised-button
-          style="position: relative"
-        >
-          Compose
-        </button>
-      </div>
-
-      <mat-action-list>
-        <mat-accordion>
-          <mat-expansion-panel hideToggle>
-            <mat-expansion-panel-header>
-              <mat-panel-title> Project Request </mat-panel-title>
-            </mat-expansion-panel-header>
-            <mat-action-list>
-              <button routerLink="project-request-profitable" mat-list-item>Profitable</button>
-              <button routerLink="project-request-charitable" mat-list-item>Charitable</button>
-            </mat-action-list>
-          </mat-expansion-panel>
-        </mat-accordion>
-      </mat-action-list>
+    <mat-drawer class="sidebar" mode="side" opened>
+      <app-sidebar></app-sidebar>
     </mat-drawer>
-    <mat-drawer-content class="dashboard__container__content">Main content</mat-drawer-content>
+    <mat-drawer-content class="dashboard__container__content">
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
   </mat-drawer-container>
 </div>

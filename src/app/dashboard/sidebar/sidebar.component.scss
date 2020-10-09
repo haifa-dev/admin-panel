@@ -1,0 +1,57 @@
+.sidebar {
+  background: #111111;
+  width: 100%;
+  max-width: 15.5rem;
+  height: 100%;
+
+  .compose {
+    &_button {
+      border-radius: 10rem;
+      margin: 2rem;
+      padding: 0.5rem 2rem;
+    }
+  }
+
+  .menu {
+    margin-right: 1.5rem;
+
+    mat-icon {
+      margin-right: 1rem;
+    }
+
+    mat-panel-title {
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.06rem;
+    }
+
+    &__item {
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.06rem;
+      display: flex;
+
+      // align-items: center;
+      // text-decoration: none;
+      // display: flex;
+      // padding: 0.5rem 2rem;
+      // border-top-right-radius: 20rem;
+      // border-bottom-right-radius: 20rem;
+      // margin-right: 1rem;
+      // &__text {
+      //   font-size: 0.875rem;
+      //   font-weight: 500;
+      //   letter-spacing: 0.06rem;
+      // }
+      // mat-icon {
+      //   color: #b0b0b0;
+      //   font-size: 1.2em;
+      // }
+    }
+
+    mat-icon {
+      color: #b0b0b0;
+      font-size: 1.2em;
+    }
+  }
+}

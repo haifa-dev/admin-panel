@@ -7,8 +7,10 @@
   </div>
   <div class="login__content">
     <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
-      <label for="login__email"><mat-icon>person_outline</mat-icon>Email</label>
+      <!-- <label for="login__email"><mat-icon>person_outline</mat-icon>Email</label> -->
       <mat-form-field appearance="outline">
+        <mat-icon class="prefixed_icon" matPrefix>alternate_email</mat-icon>
+        <mat-label> Email </mat-label>
         <input
           id="login__email"
           formControlName="email"
@@ -19,8 +21,10 @@
           getErrorMessage(form.get('email'))
         }}</mat-error>
       </mat-form-field>
-      <label for="login__password"><mat-icon>lock_outline</mat-icon> Password</label>
+      <!-- <label for="login__password"></label><mat-icon>lock_outline</mat-icon> Password</label> -->
       <mat-form-field appearance="outline">
+        <mat-icon class="prefixed_icon" matPrefix>lock_outline</mat-icon>
+        <mat-label><span>Password</span></mat-label>
         <input
           id="login__password"
           formControlName="password"
@@ -28,6 +32,7 @@
           placeholder="i.e. example@!%$5475347"
           [type]="hide ? 'password' : 'text'"
         />
+        <!-- <mat-icon matSuffix>lock_outline</mat-icon> -->
         <button
           type="button"
           mat-icon-button

@@ -9,9 +9,17 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [
+    DashboardComponent,
+    ToolbarComponent,
+    SidebarComponent,
+  ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
@@ -21,6 +29,9 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatExpansionModule,
     MatListModule,
+    MatProgressSpinnerModule,
+    MatTableModule,
+
   ],
 })
 export class DashboardModule {}

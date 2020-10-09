@@ -19,7 +19,7 @@ $admin-panel-warn: mat-palette($mat-red);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$admin-panel-theme: mat-light-theme(
+$admin-panel-theme: mat-dark-theme(
   (
     color: (
       primary: $admin-panel-primary,
@@ -56,3 +56,14 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   font-size: 62.5%;
 }
+
+a {
+  color: inherit;
+  
+}
+
+
+// // remove the padding from all expansion panels at material
+// .mat-expansion-panel-body {
+//   padding: 0 !important;
+// }

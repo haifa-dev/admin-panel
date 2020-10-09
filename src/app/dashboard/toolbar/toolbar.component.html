@@ -1,0 +1,20 @@
+<mat-toolbar class="toolbar">
+  <button
+    mat-mini-fab
+    class="toolbar__menu"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="toolbar__logo">
+    <span class="toolbar__logo--green"> haifa</span>:dev
+  </div>
+  <button
+    (click)="logout()"
+    mat-mini-fab
+    class="toolbar__logout-button"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
