@@ -1,7 +1,15 @@
-<ng-container *ngFor="let chariProjReq of chariProjReqs">
-  <div [routerLink]="chariProjReq.id" class="card">
+<ng-container *ngFor="let chariProjReq of chariProjReqs; let i = index">
+  <div
+    (click)="onClick(chariProjReq.id)"
+    [routerLink]="chariProjReq.id"
+    name="chariProjReq.id"
+    [ngClass]="{ active: currentActiveItem === chariProjReq.id }"
+    class="card"
+  >
     <div class="first-col">
-      <div class="avatar">LA</div>
+      <div [ngStyle]="{ backgroundColor: setAvatarColor(chariProjReq.name) }" class="avatar">
+        {{ getUserNameAndLetter(chariProjReq.name) }}
+      </div>
     </div>
     <div class="second-col">
       <div class="name">{{ chariProjReq.name }}</div>
@@ -11,7 +19,9 @@
       <div class="description">{{ chariProjReq.description }}</div>
     </div>
     <div class="third-col">
-      <div class="time">Thu 8:04 Pm</div>
+      <br />
+      <div class="time">{{ chariProjReq.createdAt | date: 'h:mm a' }}</div>
+      <div class="date">{{ chariProjReq.createdAt | date: 'dd/mm/yy' }}</div>
     </div>
   </div>
 </ng-container>

@@ -23,6 +23,7 @@ const convertArrayToHashTable = (arr: ChariProjReq[]) => {
 export class ChariProjReqService {
   rootUrl = environment.serverUrl;
   chariProjReqArr: ChariProjReq[] = [];
+  currentChariProjReqId$: BehaviorSubject<string> = new BehaviorSubject('');
   constructor(private http: HttpClient) {}
 
   getChariProjReqArr() {
