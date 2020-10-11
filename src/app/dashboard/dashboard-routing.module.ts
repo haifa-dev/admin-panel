@@ -13,7 +13,7 @@ const routes: Routes = [
           import('../profit-proj-req/profit-proj-req.module').then(m => m.ProfitProjReqModule),
       },
       {
-        path: '',
+        path: 'charitable',
         loadChildren: () =>
           import('../chari-proj-req/chari-proj-req.module').then(m => m.ChariProjReqModule),
       },

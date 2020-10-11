@@ -3,17 +3,19 @@
     <div mat-subheader>Project Requests</div>
     <mat-divider></mat-divider>
 
-    <mat-list-option [routerLink]="'/dashboard'" routerLinkActive="mat-list-single-selected-option"
-    [routerLinkActiveOptions]="{ exact: true }"
+    <mat-list-option
+      [routerLink]="'/dashboard/charitable'"
+      routerLinkActive="mat-list-single-selected-option"
     >
       <mat-list-item>
         <mat-icon mat-list-icon>free_breakfast</mat-icon>
-        <div mat-line >
-          Charitable
-        </div>
+        <div mat-line>Charitable</div>
       </mat-list-item>
     </mat-list-option>
-    <mat-list-option  [routerLink]="'/dashboard/profitable'" routerLinkActive="mat-list-single-selected-option">
+    <mat-list-option
+      [routerLink]="'/dashboard/profitable'"
+      routerLinkActive="mat-list-single-selected-option"
+    >
       <mat-list-item>
         <mat-icon mat-list-icon>attach_money</mat-icon>
         <div mat-line>Profitable</div>
