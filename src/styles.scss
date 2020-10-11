@@ -63,6 +63,10 @@ a {
 }
 
 
+::selection {
+  background-color: red;
+  color: white;
+}
 // // remove the padding from all expansion panels at material
 // .mat-expansion-panel-body {
 //   padding: 0 !important;

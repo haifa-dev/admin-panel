@@ -62,7 +62,6 @@ export class AuthService {
       next: response => {
         this.username = response.user.name;
         this.authenticated$.next(true);
-        this.router.navigateByUrl('/dashboard');
       },
       error: ({ error }) => {
         this.authenticated$.next(false);
