@@ -8,6 +8,11 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       {
+        path: 'profitable',
+        loadChildren: () =>
+          import('../profit-proj-req/profit-proj-req.module').then(m => m.ProfitProjReqModule),
+      },
+      {
         path: '',
         loadChildren: () =>
           import('../chari-proj-req/chari-proj-req.module').then(m => m.ChariProjReqModule),

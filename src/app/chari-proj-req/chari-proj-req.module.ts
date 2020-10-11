@@ -7,10 +7,18 @@ import { ChariProjReqShowComponent } from './chari-proj-req-show/chari-proj-req-
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [ChariProjReqListComponent, ChariProjReqHomeComponent, ChariProjReqShowComponent],
-  imports: [CommonModule, ChariProjReqRoutingModule, MatTableModule, MatCardModule, MatIconModule],
+  imports: [
+    CommonModule,
+    ChariProjReqRoutingModule,
+    MatTableModule,
+    MatCardModule,
+    MatIconModule,
+    MatDividerModule,
+  ],
   exports: [],
 })
 export class ChariProjReqModule {}

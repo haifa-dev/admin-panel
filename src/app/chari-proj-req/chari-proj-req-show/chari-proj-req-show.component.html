@@ -1,8 +1,31 @@
-<h1>{{ chariProjReq.id }}</h1>
-<p>{{ chariProjReq.name }}&lt;{{ chariProjReq.email }}&gt;></p>
-<p>{{ chariProjReq.createdAt }}</p>
-<p>{{ chariProjReq.phone }}</p>
-<p>{{ chariProjReq.about }}</p>
-<p>{{ chariProjReq.description }}</p>
-<p>{{ chariProjReq.webAddress }}</p>
-<p>{{ chariProjReq.tasks }}</p>
+<div class="document">
+  <div class="document__header">
+    <h1 class="document__header__main">{{ chariProjReq.name }}</h1>
+    <h2 class="document__header__sub">
+      <span class="document__header__sub__email">{{ chariProjReq.email }}</span>
+      <span class="document__header__sub__phone">{{ chariProjReq.phone }}</span>
+    </h2>
+    <p class="document__header__date">
+      {{ chariProjReq.createdAt | date: 'MMM dd, yyyy, h:mma' }} ({{
+        getRelativeTime(chariProjReq.createdAt)
+      }})
+    </p>
+  </div>
+  <div *ngIf="chariProjReq.webAddress" class="document__website">
+    <a [href]="chariProjReq.webAddress" target="_blank" class="document__header__website">{{
+      this.extractSubDomain(chariProjReq.webAddress)
+    }}</a>
+  </div>
+  <div class="document__section">
+    <h3 class="document__section__header">About<mat-divider></mat-divider></h3>
+    <p class="document__section__content">{{ chariProjReq.about }}</p>
+  </div>
+  <div class="document__section">
+    <h3 class="document__section__header">tasks<mat-divider></mat-divider></h3>
+    <p class="document__section__content">{{ chariProjReq.tasks }}</p>
+  </div>
+  <div class="document__section">
+    <h3 class="document__section__header">description<mat-divider></mat-divider></h3>
+    <p class="document__section__content">{{ chariProjReq.description }}</p>
+  </div>
+</div>

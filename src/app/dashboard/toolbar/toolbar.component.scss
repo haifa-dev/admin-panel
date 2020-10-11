@@ -3,10 +3,10 @@
   align-items: center;
   justify-content: center;
   padding: 0.66rem 1.1rem;
-  background-color: #111111;
+  background: #242424;
 
   &__menu {
-    background-color: #111111;
+    background-color: transparent;
     margin-right: 0.6rem;
 
     &:hover {
@@ -29,7 +29,7 @@
 
   &__logout-button {
     color: white;
-    background: #111111;
+    background: transparent;
     margin-left: auto;
     padding-left: 0.2rem;
 

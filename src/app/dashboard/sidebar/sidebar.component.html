@@ -1,86 +1,61 @@
 <div class="sidebar">
-  <!-- <mat-accordion>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            <mat-icon [inline]="true">label</mat-icon>Project Request
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-          <mat-list-item>
-            <a class="menu__item"> <mat-icon [inline]="true">label</mat-icon>Profitable </a>
-          </mat-list-item>
-        </mat-nav-list>
-      </mat-expansion-panel>
-    </mat-accordion> -->
-  <!-- <div class="menu__options__primary"><mat-icon>work_outline</mat-icon>Project Request</div> -->
-
   <mat-selection-list class="menu" [multiple]="false">
     <div mat-subheader>Project Requests</div>
     <mat-divider></mat-divider>
 
-    <mat-list-option>
-      <mat-icon mat-list-icon>free_breakfast</mat-icon>
-      <div mat-line>Charitable</div>
+    <mat-list-option [routerLink]="'/dashboard'" routerLinkActive="mat-list-single-selected-option"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <mat-list-item>
+        <mat-icon mat-list-icon>free_breakfast</mat-icon>
+        <div mat-line >
+          Charitable
+        </div>
+      </mat-list-item>
     </mat-list-option>
-    <mat-list-option>
-      <mat-icon mat-list-icon>attach_money</mat-icon>
-      <div mat-line>Profitable</div>
-    </mat-list-option>
+    <mat-list-option  [routerLink]="'/dashboard/profitable'" routerLinkActive="mat-list-single-selected-option">
+      <mat-list-item>
+        <mat-icon mat-list-icon>attach_money</mat-icon>
+        <div mat-line>Profitable</div>
+      </mat-list-item></mat-list-option
+    >
     <br />
     <div mat-subheader>Website Data</div>
     <mat-divider></mat-divider>
 
     <mat-list-option>
-      <mat-icon mat-list-icon>attach_file</mat-icon>
-      <div mat-line>Projects</div>
-    </mat-list-option>
+      <mat-list-item>
+        <mat-icon mat-list-icon>attach_file</mat-icon>
+        <div mat-line>Projects</div>
+      </mat-list-item></mat-list-option
+    >
 
     <mat-list-option>
-      <mat-icon mat-list-icon>event_note</mat-icon>
-      <div mat-line>Events</div>
-    </mat-list-option>
+      <mat-list-item>
+        <mat-icon mat-list-icon>event_note</mat-icon>
+        <div mat-line>Events</div>
+      </mat-list-item></mat-list-option
+    >
 
     <mat-list-option>
-      <mat-icon mat-list-icon>people</mat-icon>
-      <div mat-line>Profiles</div>
-    </mat-list-option>
+      <mat-list-item>
+        <mat-icon mat-list-icon>people</mat-icon>
+        <div mat-line>Profiles</div>
+      </mat-list-item></mat-list-option
+    >
 
     <br />
     <div mat-subheader>Options</div>
     <mat-divider></mat-divider>
 
     <mat-list-option>
-      <mat-icon mat-list-icon>vpn_key</mat-icon>
-      <div mat-line>Accounts</div>
-    </mat-list-option>
-  </mat-selection-list>
-  <button mat-raised-button type="submit" class="compose_button" mat-raised-button><mat-icon>create_new_folder</mat-icon>New</button>
-
-  <!-- <div class="menu">
-    <mat-selection-list [multiple]="false">
-      <mat-list-option
-        class="menu__options__primary"
-        [routerLink]="'/dashboard'"
-        [value]="'Charitable'"
-      >
-        <div mat-line><mat-icon>work_outline</mat-icon>Project Request</div>
-      </mat-list-option>
-      <mat-list-option [routerLink]="'/dashboard'" [value]="'Charitable'">
-        <div mat-line>Charitable</div>
-      </mat-list-option>
-      <mat-list-option
-        class="menu__options__secondary"
-        [routerLink]="'/dashboard'"
-        [value]="'Profitable'"
-      >
-        <div mat-line>Profitable</div>
-      </mat-list-option>
-    </mat-selection-list>
-  </div> -->
-  <!-- <mat-nav-list>
       <mat-list-item>
-        <a class="menu__item"> <mat-icon [inline]="true">label</mat-icon>Profiles </a>
-      </mat-list-item>
-    </mat-nav-list> -->
+        <mat-icon mat-list-icon>vpn_key</mat-icon>
+        <div mat-line>Accounts</div>
+      </mat-list-item></mat-list-option
+    >
+  </mat-selection-list>
+  <button mat-raised-button type="submit" class="compose_button" mat-raised-button>
+    <mat-icon>create_new_folder</mat-icon>New
+  </button>
 </div>
