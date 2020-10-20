@@ -9,15 +9,11 @@ import { ChariProjReq } from '../chari-proj-req';
 export class ChariProjReqHomeComponent implements OnInit {
   chariProjReqs: ChariProjReq[];
   currentChariProjReq: ChariProjReq;
-  constructor(private route: ActivatedRoute) {
-    this.route.data.subscribe(({ chariProjReqs }) => {
-      this.chariProjReqs = chariProjReqs;
-    });
-  }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(({ id }) => {
-      this.currentChariProjReq = this.chariProjReqs[id];
-    });
+    // this.route.params.subscribe(({ id }) => {
+    //   this.currentChariProjReq = this.chariProjReqs[id];
+    // });
   }
 }

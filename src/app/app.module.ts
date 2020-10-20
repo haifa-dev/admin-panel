@@ -8,9 +8,10 @@ import { AuthModule } from './auth/auth.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthHttpInterceptor } from './auth/auth-http.interceptor';
+import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoadingScreenComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule, AuthModule],
   providers: [
     CookieService,

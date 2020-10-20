@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
-import { SubmitButtonComponent } from './submit-button/submit-button.component';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
+import { SharedRoutingModule } from './shared-routing.module';
+import { ProjReqItemComponent } from './proj-req-item/proj-req-item.component';
 
 @NgModule({
-  declarations: [SubmitButtonComponent],
-  imports: [CommonModule, MatButtonModule, MatProgressSpinnerModule],
-  exports: [],
+  declarations: [ProjReqItemComponent],
+  imports: [CommonModule, SharedRoutingModule],
+  exports: [ProjReqItemComponent],
 })
 export class SharedModule {}

@@ -1,0 +1,42 @@
+.loading {
+  background: #242424;
+  z-index: 2;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  position: absolute;
+
+  &__spinner {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    border-top: 5px solid #008013;
+    border-bottom: 5px solid #008013;
+    animation: spin 1s linear infinite;
+    border-radius: 100%;
+  }
+  &__logo {
+    font-size: 1.7rem;
+    // font-size: 1.1em;
+    font-weight: 400;
+    // letter-spacing: 0.1em;
+    color: white;
+    font-family: 'IBM Plex Mono', monospace;
+
+    &--green {
+      color: #008013;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

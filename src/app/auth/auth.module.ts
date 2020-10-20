@@ -8,7 +8,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from '../shared/shared.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
@@ -21,7 +20,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatIconModule,
     MatButtonModule,
     ReactiveFormsModule,
-    SharedModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
   ],

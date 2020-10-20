@@ -1,5 +1,9 @@
-<ng-container *ngFor="let chariProjReq of chariProjReqs; let i = index">
-  <div
+<ng-container *ngIf="chariProjReqs">
+  <app-proj-req-item
+    *ngFor="let chariProjReq of chariProjReqs; let i = index"
+    [projReq]="chariProjReq"
+  ></app-proj-req-item>
+  <!-- <div
     (click)="onClick(chariProjReq.id)"
     [routerLink]="chariProjReq.id"
     name="chariProjReq.id"
@@ -23,5 +27,5 @@
       <div class="time">{{ chariProjReq.createdAt | date: 'h:mm a' }}</div>
       <div class="date">{{ chariProjReq.createdAt | date: 'dd/mm/yy' }}</div>
     </div>
-  </div>
+  </div> -->
 </ng-container>

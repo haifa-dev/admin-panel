@@ -1,0 +1,25 @@
+<div
+  [routerLink]="projReq.id"
+  name="projReq.id"
+  [ngClass]="{ active: isActive(projReq.id) }"
+  class="card"
+>
+  <div class="first-col">
+    <div [ngStyle]="{ backgroundColor: setAvatarColor(projReq.name) }" class="avatar">
+      {{ getUserNameAndLetter(projReq.name) }}
+    </div>
+  </div>
+  <div class="second-col">
+    <div class="name">{{ projReq.name }}</div>
+    <div class="title">
+      {{ projReq.email }}
+    </div>
+    <div class="description">{{ projReq.description }}</div>
+  </div>
+  <div class="third-col">
+    <br />
+    <div class="time">{{ projReq.createdAt | date: 'h:mm a' }}</div>
+    <div class="date">{{ projReq.createdAt | date: 'dd/mm/yy' }}</div>
+  </div>
+</div>
+<!-- (click)="onClick(projReq.id)" -->

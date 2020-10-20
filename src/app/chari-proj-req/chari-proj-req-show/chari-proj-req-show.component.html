@@ -1,20 +1,34 @@
-<div class="document">
+<div *ngIf="chariProjReq" class="document">
   <div class="document__header">
     <h1 class="document__header__main">{{ chariProjReq.name }}</h1>
     <h2 class="document__header__sub">
       <span class="document__header__sub__email">{{ chariProjReq.email }}</span>
-      <span class="document__header__sub__phone">{{ chariProjReq.phone }}</span>
+      <span class="document__header__sub__phone"
+        ><mat-icon class="document__header__sub__phone__icon" [inline]="'true'">phone</mat-icon
+        >{{ chariProjReq.phone }}</span
+      >
     </h2>
     <p class="document__header__date">
-      {{ chariProjReq.createdAt | date: 'MMM dd, yyyy, h:mma' }} ({{
-        getRelativeTime(chariProjReq.createdAt)
-      }})
+      <span class="document__header__date__main">
+        <mat-icon class="document__header__date__main__icon" [inline]="'true'">date_range</mat-icon>
+        {{ chariProjReq.createdAt | date: 'MMM dd, yyyy' }}</span
+      >
+      <span class="document__header__date__time">
+        <mat-icon class="document__header__date__time__icon" [inline]="'true'"
+          >access_time
+        </mat-icon>
+        {{ chariProjReq.createdAt | date: 'h:mma' }}
+      </span>
+      <span class="document__header__date__relative-time">
+        ( {{ getRelativeTime(chariProjReq.createdAt) }} )
+      </span>
     </p>
-  </div>
-  <div *ngIf="chariProjReq.webAddress" class="document__website">
-    <a [href]="chariProjReq.webAddress" target="_blank" class="document__header__website">{{
-      this.extractSubDomain(chariProjReq.webAddress)
-    }}</a>
+    <p *ngIf="chariProjReq.webAddress" class="document__header__website">
+      <mat-icon class="document__header__website__icon" [inline]="'true'">link</mat-icon>
+      <a [href]="chariProjReq.webAddress" target="_blank" class="document__header__website__url">{{
+        this.extractSubDomain(chariProjReq.webAddress)
+      }}</a>
+    </p>
   </div>
   <div class="document__section">
     <h3 class="document__section__header">About<mat-divider></mat-divider></h3>

@@ -8,6 +8,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [ChariProjReqListComponent, ChariProjReqHomeComponent, ChariProjReqShowComponent],
@@ -18,6 +19,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatCardModule,
     MatIconModule,
     MatDividerModule,
+    SharedModule,
   ],
   exports: [],
 })
