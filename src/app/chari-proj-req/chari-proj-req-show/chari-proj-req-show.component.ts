@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { ChariProjReq } from '../chari-proj-req';
 import { ChariProjReqService } from '../chari-proj-req.service';
+import { pluck, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-chari-proj-req-show',
@@ -11,12 +12,20 @@ import { ChariProjReqService } from '../chari-proj-req.service';
 })
 export class ChariProjReqShowComponent implements OnInit {
   chariProjReq: ChariProjReq;
+
   constructor(private route: ActivatedRoute, private chariProjReqService: ChariProjReqService) {}
+  
   ngOnInit(): void {
-    this.route.params.subscribe(({ id }) => {
-      this.chariProjReq = this.chariProjReqService.getCurrentChariProjArr(id);
-    });
+    this.route.params
+      .pipe(
+        pluck('id'),
+        switchMap((id: string) => this.chariProjReqService.getSingular(id))
+      )
+      .subscribe(chariProjReq => {
+        this.chariProjReq = chariProjReq;
+      });
   }
+
   extractSubDomain(url: string) {
     const name = url.match(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)/gim);
     return name.length ? name[0] : 'Website';

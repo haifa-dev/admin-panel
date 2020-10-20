@@ -7,6 +7,7 @@ export interface ChariProjReq {
   description: string;
   webAddress: string;
   tasks: string;
+  reed: boolean;
   createdAt: string;
   updatedAt: string;
 }

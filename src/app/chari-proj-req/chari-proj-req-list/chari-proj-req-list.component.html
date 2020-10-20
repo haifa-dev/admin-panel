@@ -2,30 +2,7 @@
   <app-proj-req-item
     *ngFor="let chariProjReq of chariProjReqs; let i = index"
     [projReq]="chariProjReq"
+    [currentId]="currentId"
+    (click)="click(chariProjReq)"
   ></app-proj-req-item>
-  <!-- <div
-    (click)="onClick(chariProjReq.id)"
-    [routerLink]="chariProjReq.id"
-    name="chariProjReq.id"
-    [ngClass]="{ active: currentActiveItem === chariProjReq.id }"
-    class="card"
-  >
-    <div class="first-col">
-      <div [ngStyle]="{ backgroundColor: setAvatarColor(chariProjReq.name) }" class="avatar">
-        {{ getUserNameAndLetter(chariProjReq.name) }}
-      </div>
-    </div>
-    <div class="second-col">
-      <div class="name">{{ chariProjReq.name }}</div>
-      <div class="title">
-        {{ chariProjReq.email }}
-      </div>
-      <div class="description">{{ chariProjReq.description }}</div>
-    </div>
-    <div class="third-col">
-      <br />
-      <div class="time">{{ chariProjReq.createdAt | date: 'h:mm a' }}</div>
-      <div class="date">{{ chariProjReq.createdAt | date: 'dd/mm/yy' }}</div>
-    </div>
-  </div> -->
 </ng-container>

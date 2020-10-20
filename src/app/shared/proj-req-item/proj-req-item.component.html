@@ -1,7 +1,8 @@
 <div
+  *ngIf="projReq"
   [routerLink]="projReq.id"
   name="projReq.id"
-  [ngClass]="{ active: isActive(projReq.id) }"
+  [ngClass]="{ active: isActive(projReq.id), reed: projReq.reed }"
   class="card"
 >
   <div class="first-col">

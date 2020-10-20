@@ -5,37 +5,36 @@ import { pluck, reduce, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { ChariProjReq } from './chari-proj-req';
 
-export interface ChariProjReqResponse {
+export interface ChariProjReqPluralResponse {
   charitableProjectRequests: ChariProjReq[];
   results: number;
   status: string;
 }
 
-const convertArrayToHashTable = (arr: ChariProjReq[]) => {
-  return arr.reduce((acc, value) => {
-    return { ...acc, [value.id]: value };
-  }, {});
-};
+export interface ChariProjReqSingularResponse {
+  charitableProjectRequest: ChariProjReq;
+  status: string;
+}
 
 @Injectable({
   providedIn: 'root',
 })
 export class ChariProjReqService {
-  rootUrl = environment.serverUrl;
-  chariProjReqArr: ChariProjReq[] = [];
-  currentChariProjReqId$: BehaviorSubject<string> = new BehaviorSubject('');
+  baseUrl = environment.serverUrl + '/charitableProjectReqs';
+
   constructor(private http: HttpClient) {}
 
-  getChariProjReqArr() {
-    return this.http.get<ChariProjReqResponse>(`${this.rootUrl}/charitableProjectReqs`).pipe(
-      pluck('charitableProjectRequests'),
-      tap(chariProjReqs => {
-        this.chariProjReqArr = [...this.chariProjReqArr, ...chariProjReqs];
-      })
-    );
+  getPlural() {
+    return this.http
+      .get<ChariProjReqPluralResponse>(
+        `${this.baseUrl}?order[0][col]=createdAt&order[0][direction]=DESC&order[1][col]=name&order[1][direction]=ASC`
+      )
+      .pipe(pluck('charitableProjectRequests'));
   }
 
-  getCurrentChariProjArr(id: string) {
-    return convertArrayToHashTable(this.chariProjReqArr)[id];
+  getSingular(id: string) {
+    return this.http
+      .get<ChariProjReqSingularResponse>(`${this.baseUrl}/${id}`)
+      .pipe(pluck('charitableProjectRequest'));
   }
 }

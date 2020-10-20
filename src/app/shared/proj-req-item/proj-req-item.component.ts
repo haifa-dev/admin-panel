@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-proj-req-item',
@@ -8,15 +7,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProjReqItemComponent implements OnInit {
   @Input() projReq;
-  currentId = '';
+  @Input() currentId: string;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.route.firstChild.params.subscribe(({ id }) => {
-      this.currentId = id;
-    });
-  }
+  ngOnInit(): void {}
 
   isActive(id: string) {
     return this.currentId === id;
