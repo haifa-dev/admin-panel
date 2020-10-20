@@ -1,1 +1,61 @@
-<p>profit-proj-req-show works!</p>
+<div *ngIf="profitProjReq" class="document">
+  <app-proj-req-header [projectRequest]="profitProjReq"></app-proj-req-header>
+
+  <!-- <div class="document__header">
+    <h1 class="document__header__main">{{ profitProjReq.name }}</h1>
+    <h2 class="document__header__sub">
+      <span class="document__header__sub__email">{{ profitProjReq.email }}</span>
+      <span class="document__header__sub__phone"
+        ><mat-icon class="document__header__sub__phone__icon" [inline]="'true'">phone</mat-icon
+        >{{ profitProjReq.phone }}</span
+      >
+    </h2>
+    <p class="document__header__date">
+      <span class="document__header__date__main">
+        <mat-icon class="document__header__date__main__icon" [inline]="'true'">date_range</mat-icon>
+        {{ profitProjReq.createdAt | date: 'MMM dd, yyyy' }}</span
+      >
+      <span class="document__header__date__time">
+        <mat-icon class="document__header__date__time__icon" [inline]="'true'"
+          >access_time
+        </mat-icon>
+        {{ profitProjReq.createdAt | date: 'h:mma' }}
+      </span>
+      <span class="document__header__date__relative-time">
+        ( {{ getRelativeTime(profitProjReq.createdAt) }} )
+      </span>
+    </p>
+
+    <p *ngIf="profitProjReq.businessPlan" class="document__header__website">
+      <mat-icon class="document__header__website__icon" [inline]="'true'">link</mat-icon>
+      <a
+        [href]="profitProjReq.businessPlan"
+        target="_blank"
+        class="document__header__website__url"
+        >{{ this.extractSubDomain(profitProjReq.businessPlan) }}</a
+      >
+    </p>
+
+    <p *ngIf="profitProjReq.systemDefinition" class="document__header__website">
+      <mat-icon class="document__header__website__icon" [inline]="'true'">link</mat-icon>
+      <a
+        [href]="profitProjReq.systemDefinition"
+        target="_blank"
+        class="document__header__website__url"
+        >{{ this.extractSubDomain(profitProjReq.systemDefinition) }}</a
+      >
+    </p>
+  </div> -->
+
+  <div class="document__content">
+    <app-section [title]="'about'" [data]="profitProjReq.about"></app-section>
+  </div>
+
+  <!-- 
+{
+  "businessPlan": "https://www.facebook.com/groups/haifadev",
+  "systemDefinition": "https://www.facebook.com/groups/haifadev",
+  "communityOrProfit": "community",
+  "isFunded": false
+} -->
+</div>

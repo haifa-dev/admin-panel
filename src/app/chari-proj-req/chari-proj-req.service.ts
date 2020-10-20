@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { pluck, reduce, tap } from 'rxjs/operators';
+import { pluck } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { ChariProjReq } from './chari-proj-req';
 

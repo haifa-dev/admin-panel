@@ -1,1 +1,8 @@
-<p>profit-proj-req-home works!</p>
+<app-link-panel>
+  <app-proj-req-item
+    *ngFor="let profitProjReq of profitProjReqs"
+    [projReq]="profitProjReq"
+    [currentId]="currentId"
+    (click)="click(profitProjReq)"
+  ></app-proj-req-item>
+</app-link-panel>

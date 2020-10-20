@@ -1,8 +1,0 @@
-<ng-container *ngIf="chariProjReqs">
-  <app-proj-req-item
-    *ngFor="let chariProjReq of chariProjReqs; let i = index"
-    [projReq]="chariProjReq"
-    [currentId]="currentId"
-    (click)="click(chariProjReq)"
-  ></app-proj-req-item>
-</ng-container>

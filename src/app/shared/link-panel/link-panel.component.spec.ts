@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChariProjReqListComponent } from './chari-proj-req-list.component';
+import { LinkPanelComponent } from './link-panel.component';
 
-describe('ChariProjReqListComponent', () => {
-  let component: ChariProjReqListComponent;
-  let fixture: ComponentFixture<ChariProjReqListComponent>;
+describe('LinkPanelComponent', () => {
+  let component: LinkPanelComponent;
+  let fixture: ComponentFixture<LinkPanelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChariProjReqListComponent ]
+      declarations: [ LinkPanelComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChariProjReqListComponent);
+    fixture = TestBed.createComponent(LinkPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

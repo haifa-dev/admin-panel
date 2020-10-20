@@ -1,8 +1,8 @@
-<div class="container">
-  <div class="container__menu">
-    <app-chari-proj-req-list></app-chari-proj-req-list>
-  </div>
-  <div class="container__show">
-    <router-outlet></router-outlet>
-  </div>
-</div>
+<app-link-panel>
+  <app-proj-req-item
+    *ngFor="let chariProjReq of chariProjReqs; let i = index"
+    [projReq]="chariProjReq"
+    [currentId]="currentId"
+    (click)="click(chariProjReq)"
+  ></app-proj-req-item>
+</app-link-panel>

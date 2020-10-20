@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProfitProjReqListComponent } from './profit-proj-req-list.component';
+import { ProjReqHeaderComponent } from './proj-req-header.component';
 
-describe('ProfitProjReqListComponent', () => {
-  let component: ProfitProjReqListComponent;
-  let fixture: ComponentFixture<ProfitProjReqListComponent>;
+describe('ProjReqHeaderComponent', () => {
+  let component: ProjReqHeaderComponent;
+  let fixture: ComponentFixture<ProjReqHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProfitProjReqListComponent ]
+      declarations: [ ProjReqHeaderComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProfitProjReqListComponent);
+    fixture = TestBed.createComponent(ProjReqHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

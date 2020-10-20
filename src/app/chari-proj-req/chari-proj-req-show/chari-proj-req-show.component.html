@@ -1,5 +1,6 @@
 <div *ngIf="chariProjReq" class="document">
-  <div class="document__header">
+  <app-proj-req-header [projectRequest]="chariProjReq"></app-proj-req-header>
+  <!-- <div class="document__header">
     <h1 class="document__header__main">{{ chariProjReq.name }}</h1>
     <h2 class="document__header__sub">
       <span class="document__header__sub__email">{{ chariProjReq.email }}</span>
@@ -29,19 +30,10 @@
         this.extractSubDomain(chariProjReq.webAddress)
       }}</a>
     </p>
-  </div>
+  </div> -->
   <div class="document__content">
-    <div class="document__content__section">
-      <h3 class="document__content__section__header">About<mat-divider></mat-divider></h3>
-      <p class="document__content__section__content">{{ chariProjReq.about }}</p>
-    </div>
-    <div class="document__content__section">
-      <h3 class="document__content__section__header">tasks<mat-divider></mat-divider></h3>
-      <p class="document__content__section__content">{{ chariProjReq.tasks }}</p>
-    </div>
-    <div class="document__content__section">
-      <h3 class="document__content__section__header">description<mat-divider></mat-divider></h3>
-      <p class="document__content__section__content">{{ chariProjReq.description }}</p>
-    </div>
+    <app-section [title]="'about'" [data]="chariProjReq.about"></app-section>
+    <app-section [title]="'tasks'" [data]="chariProjReq.tasks"></app-section>
+    <app-section [title]="'description'" [data]="chariProjReq.description"></app-section>
   </div>
 </div>

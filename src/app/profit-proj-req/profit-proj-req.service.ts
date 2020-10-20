@@ -29,13 +29,13 @@ export class ProfitProjReqService {
       .get<ProfitProjReqPluralResponse>(
         `${this.baseUrl}?order[0][col]=createdAt&order[0][direction]=DESC&order[1][col]=name&order[1][direction]=ASC`
       )
-      .pipe(pluck('charitableProjectRequests'));
+      .pipe(pluck('profitableProjectRequests'));
   }
 
   getSingular(id: string) {
     return this.http
       .get<ProfitProjReqSingularResponse>(`${this.baseUrl}/${id}`)
-      .pipe(pluck('charitableProjectRequest'));
+      .pipe(pluck('profitableProjectRequest'));
   }
 
   
