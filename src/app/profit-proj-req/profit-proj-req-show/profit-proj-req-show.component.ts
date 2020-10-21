@@ -12,6 +12,7 @@ import { pluck, switchMap } from 'rxjs/operators';
 export class ProfitProjReqShowComponent implements OnInit {
   profitProjReq: ProfitProjReq;
   loading = true;
+  failed = false;
   constructor(private route: ActivatedRoute, private profitProjReqService: ProfitProjReqService) {}
 
   ngOnInit(): void {
@@ -20,9 +21,17 @@ export class ProfitProjReqShowComponent implements OnInit {
         pluck('id'),
         switchMap((id: string) => this.profitProjReqService.getSingular(id))
       )
-      .subscribe(profitProjReq => {
-        this.profitProjReq = profitProjReq;
-        this.loading = false;
+      .subscribe({
+        next: profitProjReq => {
+          this.profitProjReq = profitProjReq;
+          this.loading = false;
+          this.failed = false;
+        },
+        error: err => {
+          console.log(err.error.message);
+          this.loading = false;
+          this.failed = true;
+        },
       });
   }
 }

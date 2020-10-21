@@ -8,6 +8,12 @@ interface ProjectRequest {
   createdAt: string;
 }
 
+interface MatMenuItem {
+  title: string;
+  icon: string;
+  url: string;
+}
+
 @Component({
   selector: 'app-proj-req-header',
   templateUrl: './proj-req-header.component.html',
@@ -16,10 +22,9 @@ interface ProjectRequest {
 export class ProjReqHeaderComponent implements OnInit {
   @Input() projectRequest: ProjectRequest;
   constructor() {}
-
+  matMenuItems: MatMenuItem[] = [{ title: 'delete', icon: 'delete', url: '' }];
   ngOnInit(): void {}
 
-  
   extractSubDomain(url: string) {
     const name = url.match(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)/gim);
     return name.length ? name[0] : 'Website';

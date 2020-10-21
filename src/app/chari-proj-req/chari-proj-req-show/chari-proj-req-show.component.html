@@ -1,5 +1,6 @@
+<app-proj-req-not-found *ngIf="failed"></app-proj-req-not-found>
 <app-spinner *ngIf="loading"></app-spinner>
-<div *ngIf="!loading" class="document">
+<div *ngIf="!loading && !failed" class="document">
   <app-proj-req-header [projectRequest]="chariProjReq"></app-proj-req-header>
   <div class="document__content">
     <app-section [title]="'about'" [data]="chariProjReq.about"></app-section>

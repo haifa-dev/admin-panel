@@ -14,6 +14,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatRippleModule } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { ProjReqNotFoundComponent } from './proj-req-not-found/proj-req-not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MatButtonModule } from '@angular/material/button';
     SectionComponent,
     ProjReqHeaderComponent,
     SpinnerComponent,
+    ProjReqNotFoundComponent,
   ],
   imports: [
     CommonModule,
@@ -40,6 +42,7 @@ import { MatButtonModule } from '@angular/material/button';
     SectionComponent,
     ProjReqHeaderComponent,
     SpinnerComponent,
+    ProjReqNotFoundComponent,
   ],
 })
 export class SharedModule {}

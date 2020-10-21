@@ -13,6 +13,7 @@ import { pluck, switchMap } from 'rxjs/operators';
 export class ChariProjReqShowComponent implements OnInit {
   chariProjReq: ChariProjReq;
   loading = true;
+  failed = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,9 +27,17 @@ export class ChariProjReqShowComponent implements OnInit {
         pluck('id'),
         switchMap((id: string) => this.chariProjReqService.getSingular(id))
       )
-      .subscribe(chariProjReq => {
-        this.chariProjReq = chariProjReq;
-        this.loading = false;
+      .subscribe({
+        next: chariProjReq => {
+          this.failed = false;
+          this.chariProjReq = chariProjReq;
+          this.loading = false;
+        },
+        error: err => {
+          this.failed = true;
+          this.loading = false;
+          console.log(err.error.message);
+        },
       });
     this.router.events.subscribe((e: RouterEvent) => {
       this.navigationInterceptor(e);
