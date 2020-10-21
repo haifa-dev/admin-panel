@@ -1,4 +1,5 @@
-<div *ngIf="profitProjReq" class="document">
+<app-spinner *ngIf="loading"></app-spinner>
+<div *ngIf="!loading" class="document">
   <app-proj-req-header [projectRequest]="profitProjReq"></app-proj-req-header>
 
   <!-- <div class="document__header">

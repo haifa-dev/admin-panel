@@ -7,6 +7,12 @@
   outline: none;
   cursor: pointer;
 
+  * {
+    &::selection {
+      background: transparent;
+    }
+  }
+
   &:hover {
     background: rgba(white, 0.1);
   }
@@ -65,8 +71,8 @@
     }
   }
   &.active {
-    cursor: initial;
-    background-color: rgba($color: #fff, $alpha: 0.09);
+    cursor: default;
+    background-color: rgba($color: #fff, $alpha: 0.15);
     .first-col,
     .second-col,
     .third-col {
@@ -77,7 +83,7 @@
     }
   }
 
-  &.reed {
+  &.reed:not(.active) {
     opacity: 0.7;
   }
 }

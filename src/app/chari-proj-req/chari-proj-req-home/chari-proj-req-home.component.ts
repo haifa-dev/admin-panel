@@ -11,12 +11,13 @@ import { ChariProjReqService } from '../chari-proj-req.service';
 export class ChariProjReqHomeComponent implements OnInit {
   chariProjReqs: ChariProjReq[];
   currentId = '';
-
+  loading = true;
   constructor(private chariProjReqService: ChariProjReqService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.chariProjReqService.getPlural().subscribe(chariProjReqs => {
       this.chariProjReqs = chariProjReqs;
+      this.loading = false;
     });
 
     this.route.firstChild?.params.subscribe(({ id }) => {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,13 +8,23 @@ import { AuthService } from 'src/app/auth/auth.service';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  panelOpenState = false;
-  constructor(private authService: AuthService) {
+  menu = false;
+  isSmallScreen: boolean;
+
+  constructor(private authService: AuthService, private breakpointObserver: BreakpointObserver) {}
+
+  ngOnInit(): void {
+    this.breakpointObserver.observe('(min-width: 1200px)').subscribe(value => {
+      console.log(value);
+      this.isSmallScreen = value.matches;
+    });
   }
 
-  ngOnInit(): void {}
+  openMenu() {
+    this.menu = true;
+  }
 
   logout() {
-    this.authService.logout()
+    this.authService.logout();
   }
 }

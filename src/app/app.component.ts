@@ -7,9 +7,13 @@ import { AuthService } from './auth/auth.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  loading: boolean = true;
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
     this.authService.checkAuth();
+    this.authService.authenticated$.subscribe(authenticated => {
+      if (authenticated !== null) this.loading = false;
+    });
   }
 }

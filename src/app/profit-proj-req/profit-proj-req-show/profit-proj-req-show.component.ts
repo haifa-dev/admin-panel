@@ -11,7 +11,7 @@ import { pluck, switchMap } from 'rxjs/operators';
 })
 export class ProfitProjReqShowComponent implements OnInit {
   profitProjReq: ProfitProjReq;
-
+  loading = true;
   constructor(private route: ActivatedRoute, private profitProjReqService: ProfitProjReqService) {}
 
   ngOnInit(): void {
@@ -22,8 +22,7 @@ export class ProfitProjReqShowComponent implements OnInit {
       )
       .subscribe(profitProjReq => {
         this.profitProjReq = profitProjReq;
+        this.loading = false;
       });
   }
-
-
 }

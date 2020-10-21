@@ -6,9 +6,6 @@ import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 
-const AUTH_COOKIE = 'haifa-dev_auth-token';
-const MAX_DAYS_EXP = 30;
-
 interface Credentials {
   username: string;
   password: string;
@@ -38,7 +35,7 @@ export class AuthService {
   rootUrl = environment.serverUrl;
   // user state
   authenticated$ = new BehaviorSubject(null);
-  username = 'Admin';
+  username = '';
 
   constructor(
     private http: HttpClient,

@@ -1,8 +1,11 @@
 <div
+  matRipple
+  [matRippleDisabled]="isActive(projReq.id)"
   *ngIf="projReq"
   [routerLink]="projReq.id"
+  [routerLinkActive]="['active']"
   name="projReq.id"
-  [ngClass]="{ active: isActive(projReq.id), reed: projReq.reed }"
+  [ngClass]="{ reed: projReq.reed }"
   class="card"
 >
   <div class="first-col">

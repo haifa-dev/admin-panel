@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationStart, Router, RouterEvent } from '@angular/router';
 import * as moment from 'moment';
 import { ChariProjReq } from '../chari-proj-req';
 import { ChariProjReqService } from '../chari-proj-req.service';
@@ -12,9 +12,14 @@ import { pluck, switchMap } from 'rxjs/operators';
 })
 export class ChariProjReqShowComponent implements OnInit {
   chariProjReq: ChariProjReq;
+  loading = true;
 
-  constructor(private route: ActivatedRoute, private chariProjReqService: ChariProjReqService) {}
-  
+  constructor(
+    private route: ActivatedRoute,
+    private chariProjReqService: ChariProjReqService,
+    private router: Router
+  ) {}
+
   ngOnInit(): void {
     this.route.params
       .pipe(
@@ -23,7 +28,15 @@ export class ChariProjReqShowComponent implements OnInit {
       )
       .subscribe(chariProjReq => {
         this.chariProjReq = chariProjReq;
+        this.loading = false;
       });
+    this.router.events.subscribe((e: RouterEvent) => {
+      this.navigationInterceptor(e);
+    });
+  }
+
+  navigationInterceptor(e: RouterEvent) {
+    if (e instanceof NavigationStart) this.loading = true;
   }
 
   extractSubDomain(url: string) {

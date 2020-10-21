@@ -33,10 +33,10 @@
     > * {
       display: inline-flex;
       align-items: center;
+      margin-right: 0.8rem;
     }
 
     &__main {
-      margin-right: 2.5rem;
       &__icon {
         margin-right: 0.4rem;
       }
@@ -49,7 +49,6 @@
 
     &__relative-time {
       font-size: 0.9em;
-      margin-left: 2.5rem;
     }
   }
   &__website {
@@ -62,5 +61,12 @@
     &__url {
       text-decoration: none;
     }
+  }
+
+  .menu {
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

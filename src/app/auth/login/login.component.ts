@@ -31,7 +31,11 @@ export class LoginComponent implements OnInit {
     private snackBar: MatSnackBar
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.authService.authenticated$.subscribe(authenticated => {
+      if (authenticated === true) this.router.navigateByUrl('/dashboard');
+    });
+  }
 
   onSubmit(): void {
     if (this.form.invalid) return;

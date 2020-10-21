@@ -1,14 +1,14 @@
 <mat-toolbar class="toolbar">
   <button
+    *ngIf="!isSmallScreen"
     mat-mini-fab
     class="toolbar__menu"
     aria-label="Example icon-button with menu icon"
+    (click)="openMenu()"
   >
     <mat-icon>menu</mat-icon>
   </button>
-  <div class="toolbar__logo">
-    <span class="toolbar__logo--green"> haifa</span>:dev
-  </div>
+  <div class="toolbar__logo"><span class="toolbar__logo--green"> haifa</span>:dev</div>
   <button
     (click)="logout()"
     mat-mini-fab

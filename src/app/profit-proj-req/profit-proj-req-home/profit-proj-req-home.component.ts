@@ -11,12 +11,14 @@ import { ProfitProjReqService } from '../profit-proj-req.service';
 export class ProfitProjReqHomeComponent implements OnInit {
   profitProjReqs: ProfitProjReq[];
   currentId = '';
+  loading = true;
 
   constructor(private profitProjReqService: ProfitProjReqService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.profitProjReqService.getPlural().subscribe(profitProjReqs => {
       this.profitProjReqs = profitProjReqs;
+      this.loading = false;
     });
 
     this.route.firstChild?.params.subscribe(({ id }) => {

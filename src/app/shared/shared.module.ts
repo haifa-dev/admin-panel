@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { SharedRoutingModule } from './shared-routing.module';
 import { ProjReqItemComponent } from './proj-req-item/proj-req-item.component';
@@ -8,6 +9,11 @@ import { SectionComponent } from './section/section.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { ProjReqHeaderComponent } from './proj-req-header/proj-req-header.component';
 import { MatIconModule } from '@angular/material/icon';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatRippleModule } from '@angular/material/core';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -15,8 +21,25 @@ import { MatIconModule } from '@angular/material/icon';
     LinkPanelComponent,
     SectionComponent,
     ProjReqHeaderComponent,
+    SpinnerComponent,
   ],
-  imports: [CommonModule, SharedRoutingModule, MatDividerModule, MatIconModule],
-  exports: [ProjReqItemComponent, LinkPanelComponent, SectionComponent, ProjReqHeaderComponent],
+  imports: [
+    CommonModule,
+    SharedRoutingModule,
+    MatDividerModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
+    MatRippleModule,
+    MatMenuModule,
+    MatButtonModule,
+  ],
+  exports: [
+    ProjReqItemComponent,
+    LinkPanelComponent,
+    SectionComponent,
+    ProjReqHeaderComponent,
+    SpinnerComponent,
+  ],
 })
 export class SharedModule {}

@@ -1,4 +1,4 @@
-<app-link-panel>
+<app-link-panel [loading]="loading">
   <app-proj-req-item
     *ngFor="let profitProjReq of profitProjReqs"
     [projReq]="profitProjReq"
