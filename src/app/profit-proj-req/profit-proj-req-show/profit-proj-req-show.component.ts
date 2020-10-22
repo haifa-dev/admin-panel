@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProfitProjReq } from '../profit-proj-req';
 import { ProfitProjReqService } from '../profit-proj-req.service';
-import { pluck, switchMap } from 'rxjs/operators';
+import { catchError, map, pluck, switchMap } from 'rxjs/operators';
+import { EMPTY, of } from 'rxjs';
 
 @Component({
   selector: 'app-profit-proj-req-show',
@@ -19,19 +20,26 @@ export class ProfitProjReqShowComponent implements OnInit {
     this.route.params
       .pipe(
         pluck('id'),
-        switchMap((id: string) => this.profitProjReqService.getSingular(id))
-      )
-      .subscribe({
-        next: profitProjReq => {
-          this.profitProjReq = profitProjReq;
-          this.loading = false;
+        switchMap((id: string) => {
+          this.loading = true;
           this.failed = false;
-        },
-        error: err => {
-          console.log(err.error.message);
-          this.loading = false;
-          this.failed = true;
-        },
-      });
+          return this.profitProjReqService.getSingular(id).pipe(
+            catchError(err => {
+              console.error(err.error.message);
+
+              this.loading = false;
+              this.failed = true;
+
+              return EMPTY;
+            }),
+            map(value => {
+              this.loading = false;
+              this.failed = false;
+              return value;
+            })
+          );
+        })
+      )
+      .subscribe(profitProjReq => (this.profitProjReq = profitProjReq));
   }
 }

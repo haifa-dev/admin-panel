@@ -15,7 +15,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.breakpointObserver.observe('(min-width: 1200px)').subscribe(value => {
-      console.log(value);
       this.isSmallScreen = value.matches;
     });
   }
