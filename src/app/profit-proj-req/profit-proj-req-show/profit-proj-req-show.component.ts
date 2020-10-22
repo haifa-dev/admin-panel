@@ -4,14 +4,16 @@ import { ProfitProjReq } from '../profit-proj-req';
 import { ProfitProjReqService } from '../profit-proj-req.service';
 import { catchError, map, pluck, switchMap } from 'rxjs/operators';
 import { EMPTY, of } from 'rxjs';
+import { Attachments } from 'src/app/shared/attachments';
 
 @Component({
   selector: 'app-profit-proj-req-show',
   templateUrl: './profit-proj-req-show.component.html',
-  styleUrls: ['./profit-proj-req-show.component.scss'],
+  styleUrls: ['./profit-proj-req-show.component.scss']
 })
 export class ProfitProjReqShowComponent implements OnInit {
   profitProjReq: ProfitProjReq;
+  attachments: Attachments[] = [];
   loading = true;
   failed = false;
   constructor(private route: ActivatedRoute, private profitProjReqService: ProfitProjReqService) {}
@@ -42,7 +44,18 @@ export class ProfitProjReqShowComponent implements OnInit {
       )
       .subscribe(profitProjReq => {
         this.profitProjReq = profitProjReq;
-        console.log(profitProjReq);
+        this.attachments = [];
+        
+        if (profitProjReq.businessPlan)
+          this.attachments.push({
+            title: 'business plan',
+            address: profitProjReq.businessPlan
+          });
+        if (profitProjReq.systemDefinition)
+          this.attachments.push({
+            title: 'system definition',
+            address: profitProjReq.businessPlan
+          });
       });
   }
 }

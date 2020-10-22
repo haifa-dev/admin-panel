@@ -4,17 +4,18 @@ import { ChariProjReq } from '../chari-proj-req';
 import { ChariProjReqService } from '../chari-proj-req.service';
 import { catchError, map, pluck, switchMap } from 'rxjs/operators';
 import { EMPTY } from 'rxjs';
+import { Attachments } from 'src/app/shared/attachments';
 
 @Component({
   selector: 'app-chari-proj-req-show',
   templateUrl: './chari-proj-req-show.component.html',
-  styleUrls: ['./chari-proj-req-show.component.scss'],
+  styleUrls: ['./chari-proj-req-show.component.scss']
 })
 export class ChariProjReqShowComponent implements OnInit {
   chariProjReq: ChariProjReq;
   loading = true;
   failed = false;
-
+  attachments: Attachments[] = [];
   constructor(private route: ActivatedRoute, private chariProjReqService: ChariProjReqService) {}
 
   ngOnInit(): void {
@@ -41,6 +42,15 @@ export class ChariProjReqShowComponent implements OnInit {
           );
         })
       )
-      .subscribe(chariProjReq => (this.chariProjReq = chariProjReq));
+      .subscribe(chariProjReq => {
+        this.chariProjReq = chariProjReq;
+        this.attachments = [];
+
+        if (chariProjReq.webAddress)
+          this.attachments.push({
+            title: 'business plan',
+            address: chariProjReq.webAddress
+          });
+      });
   }
 }

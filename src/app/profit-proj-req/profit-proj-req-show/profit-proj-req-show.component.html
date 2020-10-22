@@ -53,22 +53,12 @@
     <app-section [title]="'about'" [data]="profitProjReq.about"></app-section>
   </div>
 
-  <app-attachment-section
-    [name]="'business plan'"
-    [link]="profitProjReq.businessPlan"
-  ></app-attachment-section>
-
-  <app-attachment-section
-    [name]="'system definition'"
-    [link]="profitProjReq.systemDefinition"
-  ></app-attachment-section>
+  <app-attachments-section [attachments]="attachments"></app-attachments-section>
 
   <p>{{ profitProjReq.communityOrProfit }}</p>
   <p>{{ profitProjReq.isFunded }}</p>
   <!-- 
 {
-  "businessPlan": "https://www.facebook.com/groups/haifadev",
-  "systemDefinition": "https://www.facebook.com/groups/haifadev",
   "communityOrProfit": "community",
   "isFunded": false
 } -->

@@ -1,9 +1,0 @@
-<div class="website" *ngIf="link">
-  <h3 class="website__title">{{ name }}</h3>
-  <p class="website__link">
-    <mat-icon class="website__link__icon" [inline]="'true'">link</mat-icon>
-    <a [href]="link" target="_blank" class="website__link__address">{{
-      this.extractSubDomain(link)
-    }}</a>
-  </p>
-</div>

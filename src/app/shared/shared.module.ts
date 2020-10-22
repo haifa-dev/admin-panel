@@ -15,7 +15,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { ProjReqNotFoundComponent } from './proj-req-not-found/proj-req-not-found.component';
-import { AttachmentSectionComponent } from './attachment-section/attachment-section.component';
+import { AttachmentsSectionComponent } from './attachments-section/attachments-section.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { AttachmentSectionComponent } from './attachment-section/attachment-sect
     ProjReqHeaderComponent,
     SpinnerComponent,
     ProjReqNotFoundComponent,
-    AttachmentSectionComponent,
+    AttachmentsSectionComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +36,7 @@ import { AttachmentSectionComponent } from './attachment-section/attachment-sect
     MatProgressBarModule,
     MatRippleModule,
     MatMenuModule,
-    MatButtonModule,
+    MatButtonModule
   ],
   exports: [
     ProjReqItemComponent,
@@ -45,7 +45,7 @@ import { AttachmentSectionComponent } from './attachment-section/attachment-sect
     ProjReqHeaderComponent,
     SpinnerComponent,
     ProjReqNotFoundComponent,
-    AttachmentSectionComponent,
-  ],
+    AttachmentsSectionComponent
+  ]
 })
 export class SharedModule {}
