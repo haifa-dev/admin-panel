@@ -25,11 +25,6 @@ export class ProjReqHeaderComponent implements OnInit {
   matMenuItems: MatMenuItem[] = [{ title: 'delete', icon: 'delete', url: '' }];
   ngOnInit(): void {}
 
-  extractSubDomain(url: string) {
-    const name = url.match(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)/gim);
-    return name.length ? name[0] : 'Website';
-  }
-
   getRelativeTime(date) {
     const d = Date.parse(date);
     return moment(d).fromNow();

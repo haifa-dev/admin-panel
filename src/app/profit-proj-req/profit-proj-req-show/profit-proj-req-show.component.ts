@@ -40,6 +40,9 @@ export class ProfitProjReqShowComponent implements OnInit {
           );
         })
       )
-      .subscribe(profitProjReq => (this.profitProjReq = profitProjReq));
+      .subscribe(profitProjReq => {
+        this.profitProjReq = profitProjReq;
+        console.log(profitProjReq);
+      });
   }
 }

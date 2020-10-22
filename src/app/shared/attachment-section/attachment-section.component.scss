@@ -1,0 +1,23 @@
+.website {
+  font-weight: 300;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  &__title {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    text-transform: capitalize;
+    margin-bottom: 0.1rem;
+  }
+  &__link {
+    margin-left: 1rem;
+    display: flex;
+    &__icon {
+      margin-right: 0.4rem;
+    }
+    &__address {
+      text-decoration: none;
+    }
+  }
+}
