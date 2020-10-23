@@ -54,9 +54,10 @@
   </div>
 
   <app-attachments-section [attachments]="attachments"></app-attachments-section>
-
-  <p>{{ profitProjReq.communityOrProfit }}</p>
-  <p>{{ profitProjReq.isFunded }}</p>
+  <app-indications-section
+    [isFunded]="profitProjReq.isFunded"
+    [communityOrProfit]="profitProjReq.communityOrProfit"
+  ></app-indications-section>
   <!-- 
 {
   "communityOrProfit": "community",

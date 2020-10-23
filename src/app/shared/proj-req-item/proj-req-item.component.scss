@@ -6,6 +6,7 @@
   // border-left: #008013 solid 0.26rem;
   outline: none;
   cursor: pointer;
+  transition: all .3s;
 
   * {
     &::selection {

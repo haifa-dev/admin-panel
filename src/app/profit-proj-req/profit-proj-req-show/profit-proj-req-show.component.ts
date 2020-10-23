@@ -5,6 +5,7 @@ import { ProfitProjReqService } from '../profit-proj-req.service';
 import { catchError, map, pluck, switchMap } from 'rxjs/operators';
 import { EMPTY, of } from 'rxjs';
 import { Attachments } from 'src/app/shared/attachments';
+import { Indication } from 'src/app/shared/indication';
 
 @Component({
   selector: 'app-profit-proj-req-show',
@@ -13,7 +14,8 @@ import { Attachments } from 'src/app/shared/attachments';
 })
 export class ProfitProjReqShowComponent implements OnInit {
   profitProjReq: ProfitProjReq;
-  attachments: Attachments[] = [];
+  attachments: Attachments[];
+  indications: Indication[];
   loading = true;
   failed = false;
   constructor(private route: ActivatedRoute, private profitProjReqService: ProfitProjReqService) {}
@@ -45,7 +47,8 @@ export class ProfitProjReqShowComponent implements OnInit {
       .subscribe(profitProjReq => {
         this.profitProjReq = profitProjReq;
         this.attachments = [];
-        
+        this.indications = [{title:''}];
+
         if (profitProjReq.businessPlan)
           this.attachments.push({
             title: 'business plan',
@@ -56,6 +59,7 @@ export class ProfitProjReqShowComponent implements OnInit {
             title: 'system definition',
             address: profitProjReq.businessPlan
           });
+          
       });
   }
 }

@@ -1,0 +1,16 @@
+<div class="indications">
+  <h3 class="indications__header">indications<mat-divider></mat-divider></h3>
+  <div class="indications__content">
+    <div class="indication" matRipple>
+      <mat-icon class="indication__icon" [ngClass]="{ unfunded: isFunded }" [inline]="'true'">{{
+        isFunded ? 'check' : 'close'
+      }}</mat-icon>
+
+      <div></div>
+
+      <div class="indication__link">
+        <span class="indication__link__title">{{ isFunded ? 'funded' : 'unfunded' }}</span>
+      </div>
+    </div>
+  </div>
+</div>
