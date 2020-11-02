@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ProjReqNotFoundComponent } from './proj-req-not-found/proj-req-not-found.component';
 import { AttachmentsSectionComponent } from './attachments-section/attachments-section.component';
 import { IndicationsSectionComponent } from './indications-section/indications-section.component';
+import { DocumentHeaderComponent } from './document-header/document-header.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { IndicationsSectionComponent } from './indications-section/indications-s
     SpinnerComponent,
     ProjReqNotFoundComponent,
     AttachmentsSectionComponent,
-    IndicationsSectionComponent
+    IndicationsSectionComponent,
+    DocumentHeaderComponent
   ],
   imports: [
     CommonModule,
@@ -48,7 +50,8 @@ import { IndicationsSectionComponent } from './indications-section/indications-s
     SpinnerComponent,
     ProjReqNotFoundComponent,
     AttachmentsSectionComponent,
-    IndicationsSectionComponent
+    IndicationsSectionComponent,
+    DocumentHeaderComponent
   ]
 })
 export class SharedModule {}

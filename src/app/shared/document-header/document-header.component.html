@@ -1,0 +1,24 @@
+<header class="header">
+  <h1 class="header__title">{{ documentHeader.name }}</h1>
+  <p class="header__email">{{ documentHeader.email }}</p>
+  <p *ngIf="documentHeader.phone" class="header__phone">
+    <mat-icon class="icon" [inline]="true" [fontIcon]="true">phone</mat-icon>
+    {{ documentHeader.phone }}
+  </p>
+
+  <p class="header__date">
+    <span class="header__date">
+      <mat-icon class="icon" [inline]="true" [fontIcon]="true"> date_range </mat-icon>
+      {{ documentHeader.createdAt | date: 'MMM dd, yyyy' }}
+    </span>
+
+    <span class="header__date">
+      <mat-icon class="icon" [inline]="true" [fontIcon]="true">access_time </mat-icon>
+      {{ documentHeader.createdAt | date: 'h:mma' }}
+    </span>
+
+    <span class="header__date">
+      ( {{ getRelativeTime(documentHeader.createdAt) }} )
+    </span>
+  </p>
+</header>

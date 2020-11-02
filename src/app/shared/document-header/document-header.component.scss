@@ -1,0 +1,60 @@
+.header {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, min-content);
+  grid-template-areas:
+    'head head head head'
+    'email phone . .'
+    'date date date menu';
+  align-items: flex-start;
+  align-items: center;
+  white-space: nowrap;
+
+  @media screen and (max-width: 810px) {
+    grid-template-rows: repeat(4, min-content);
+    grid-template-areas:
+    'head head head head'
+    'email email email email'
+    'phone phone phone phone'
+    'date date date menu';
+  }
+
+  padding-bottom: 1.8rem;
+  letter-spacing: .05rem;
+
+
+  p {
+    margin-bottom: .2rem;
+  }
+
+  .icon {
+    margin-right: 0.2rem;
+  }
+
+  &__title {
+    grid-area: head;
+    margin-bottom: 0rem;
+    letter-spacing: .1rem;
+  }
+  &__email {
+    grid-area: email;
+    font-size: 1rem;
+    text-transform: lowercase;
+    margin-right: 1rem;
+  }
+  &__phone {
+    grid-area: phone;
+    font-size: 0.8em;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+  }
+  &__date {
+    grid-area: date;
+    font-weight: 300;
+    font-size: 0.8rem;
+
+    > * {
+      margin-right: 1rem;
+    }
+  }
+}
