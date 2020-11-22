@@ -2,12 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.66rem 1.1rem;
+  padding: 1.056rem 1.76rem;
   background: #242424;
 
   &__menu {
     background-color: transparent;
-    margin-right: 0.6rem;
+    margin-right: 0.96rem;
+    color: white;
 
     &:hover {
       background: radial-gradient(rgba(#d7e1ec, 0.2), rgba(#ffffff, 0.2));
@@ -15,7 +16,7 @@
   }
 
   &__logo {
-    font-size: 1.7rem;
+    font-size: 2.72rem;
     // font-size: 1.1em;
     font-weight: 400;
     // letter-spacing: 0.1em;
@@ -31,7 +32,7 @@
     color: white;
     background: transparent;
     margin-left: auto;
-    padding-left: 0.2rem;
+    padding-left: 0.32rem;
 
     &:hover {
       background: radial-gradient(rgba(#d7e1ec, 0.2), rgba(#ffffff, 0.2));

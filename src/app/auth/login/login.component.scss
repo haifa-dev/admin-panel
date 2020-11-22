@@ -1,98 +1,48 @@
+@import '~@angular/material/theming';
+@import '/src/styles/utilities/palette';
+
 .login {
-  background: #333;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  &__header {
-    margin: 5rem 0;
+  .form {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    margin-left: 1rem;
-
-    font-size: 3rem;
-
-    &__primary {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 1.1em;
-
-      &--green {
-        color: #008013;
-        display: flex;
-      }
-    }
-
-    &__secondary {
-      text-transform: capitalize;
-
-      margin-top: 1.2em;
-      margin-left: -0.1em;
-      font-size: 0.35em;
-      letter-spacing: 0.44em;
-      font-weight: 500;
-    }
-
-    @media only screen and (max-width: 451px) {
-      font-size: 2rem;
-      &__secondary {
-        display: none;
-      }
-    }
-  }
-
-  &__content {
-    // background-color: #777;
-    // background: #F0F2F5;
-    color: white;
     padding: 2rem;
     border-radius: 8px;
     width: 100%;
-    max-width: 23rem;
+    max-width: 30rem;
     box-shadow: rgba(0, 0, 0, 0.5) 0 0 40px;
-    .form {
-      display: flex;
-      flex-direction: column;
-
-      mat-form-field {
-        margin-bottom: 1rem;
-      }
-
-      .prefixed_icon {
-        margin: .5rem;
-        margin-left: 0;
-      }
+    color: #7f7f7f;
+    mat-error {
+      font-weight: 700;
+      letter-spacing: .1rem;
     }
 
-    // input {
-    //   height: 2rem;
-    //   font-size: 1.1rem;
-    //   &::placeholder {
-    //     font-size: 1.1rem;
-    //   }
-    // }
-
-    .actions {
-      display: flex;
-      justify-content: center;
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+      padding: 0;
     }
-    .submit-button {
-      padding: 0.3rem 2rem;
-      text-transform: capitalize;
-      letter-spacing: 0.1rem;
+    mat-form-field {
+      margin-bottom: 1rem;
+      &.mat-focused:not(.mat-form-field-invalid) {
+        mat-icon.prefixed_icon {
+          color: mat-color($panel-primary, 500);
+        }
+      }
+
+      &.mat-form-field-invalid {
+        mat-icon.prefixed_icon {
+          color: mat-color($mat-red, 500);
+        }
+      }
     }
   }
 }
 
-.hide {
-  visibility: hidden;
-}
+
+// $panel-primary:
+// $panel-accent: (
+
+// $panel-warn: (

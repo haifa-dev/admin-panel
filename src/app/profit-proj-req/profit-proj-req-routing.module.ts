@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ProfitProjReqDocComponent } from './profit-proj-req-doc/profit-proj-req-doc.component';
 import { ProfitProjReqHomeComponent } from './profit-proj-req-home/profit-proj-req-home.component';
-import { ProfitProjReqShowComponent } from './profit-proj-req-show/profit-proj-req-show.component';
 
 const routes: Routes = [
   {
     path: '',
     component: ProfitProjReqHomeComponent,
-    children: [{ path: ':id', component: ProfitProjReqShowComponent }],
-  },
+    children: [{ path: ':id', component: ProfitProjReqDocComponent }]
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class ProfitProjReqRoutingModule {}

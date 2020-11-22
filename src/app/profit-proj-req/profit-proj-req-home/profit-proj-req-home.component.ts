@@ -6,7 +6,7 @@ import { ProfitProjReqService } from '../profit-proj-req.service';
 @Component({
   selector: 'app-profit-proj-req-home',
   templateUrl: './profit-proj-req-home.component.html',
-  styleUrls: ['./profit-proj-req-home.component.scss'],
+  styleUrls: ['./profit-proj-req-home.component.scss']
 })
 export class ProfitProjReqHomeComponent implements OnInit {
   profitProjReqs: ProfitProjReq[];

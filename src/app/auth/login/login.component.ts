@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -7,7 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   hide = true;
@@ -17,18 +17,18 @@ export class LoginComponent implements OnInit {
       Validators.email,
       Validators.required,
       Validators.minLength(1),
-      Validators.maxLength(255),
+      Validators.maxLength(255)
     ]),
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(4),
-      Validators.maxLength(255),
-    ]),
+      Validators.maxLength(255)
+    ])
   });
   constructor(
     private authService: AuthService,
     private router: Router,
-    private snackBar: MatSnackBar
+    private _snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -47,19 +47,27 @@ export class LoginComponent implements OnInit {
       },
       error: ({ error }) => {
         this.inProgress = false;
+
         let message = error.status ? error.message : 'Network Connection Error';
 
-        this.snackBar.open(message, null, {
-          duration: 3000,
+        this._snackBar.open(message, undefined, {
+          horizontalPosition: 'start',
+          verticalPosition: 'bottom',
           panelClass: ['mat-toolbar', 'mat-warn'],
+          duration: 3000
         });
-
         this.form.setErrors({ credentials: true });
-      },
+      }
     });
   }
 
-  getErrorMessage(formControl: FormControl) {
+  isInvalid(controllerName: string): boolean {
+    const formControl: AbstractControl = this.form.get(controllerName);
+    return formControl.invalid;
+  }
+
+  getErrorMessage(controllerName: string): string {
+    const formControl: AbstractControl = this.form.get(controllerName);
     if (formControl.hasError('required')) return 'You must enter a value';
     if (formControl.hasError('minlength'))
       return `Password length must be at least ${formControl.errors.minlength.requiredLength} characters long`;

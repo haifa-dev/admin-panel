@@ -1,19 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ComponentFactoryResolver,
+  ComponentRef,
+  OnInit,
+  ViewContainerRef
+} from '@angular/core';
+import { delay, take } from 'rxjs/operators';
 import { AuthService } from './auth/auth.service';
+import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  loading: boolean = true;
-  constructor(private authService: AuthService) {}
+  loading: ComponentRef<LoadingScreenComponent>;
+  constructor(
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private authService: AuthService,
+    private viewContainerRef: ViewContainerRef
+  ) {}
 
   ngOnInit(): void {
+    this.startLoading();
     this.authService.checkAuth();
-    this.authService.authenticated$.subscribe(authenticated => {
-      if (authenticated !== null) this.loading = false;
-    });
+    this.authService.loading$.pipe(delay(500), take(1)).subscribe(() => this.stopLoading());
+  }
+
+  startLoading(): void {
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(
+      LoadingScreenComponent
+    );
+    this.loading = this.viewContainerRef.createComponent<LoadingScreenComponent>(componentFactory);
+  }
+
+  stopLoading(): void {
+    this.loading.destroy();
   }
 }

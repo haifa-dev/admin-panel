@@ -1,8 +1,13 @@
-<app-link-panel [loading]="loading">
-  <app-proj-req-item
-    *ngFor="let profitProjReq of profitProjReqs"
-    [projReq]="profitProjReq"
-    [currentId]="currentId"
-    (click)="click(profitProjReq)"
-  ></app-proj-req-item>
-</app-link-panel>
+<div class="container">
+  <div class="container__menu">
+    <mat-progress-bar *ngIf="loading"
+                      mode="indeterminate"></mat-progress-bar>
+    <app-proj-req-item *ngFor="let profitProjReq of profitProjReqs"
+                       [projReq]="profitProjReq"
+                       [currentId]="currentId"
+                       (click)="click(profitProjReq)"></app-proj-req-item>
+  </div>
+  <div class="container__show">
+    <router-outlet></router-outlet>
+  </div>
+</div>

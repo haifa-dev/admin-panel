@@ -8,21 +8,21 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       {
-        path: 'profitable',
-        loadChildren: () =>
-          import('../profit-proj-req/profit-proj-req.module').then(m => m.ProfitProjReqModule),
-      },
-      {
         path: 'charitable',
         loadChildren: () =>
-          import('../chari-proj-req/chari-proj-req.module').then(m => m.ChariProjReqModule),
+          import('../chari-proj-req/chari-proj-req.module').then(m => m.ChariProjReqModule)
       },
-    ],
-  },
+      {
+        path: 'profitable',
+        loadChildren: () =>
+          import('../profit-proj-req/profit-proj-req.module').then(mod => mod.ProfitProjReqModule)
+      }
+    ]
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class DashboardRoutingModule {}

@@ -1,3 +1,5 @@
+@import '../../styles/utilities/variables';
+
 .loading {
   background: #242424;
   z-index: 2;
@@ -15,8 +17,8 @@
     position: absolute;
     width: 20rem;
     height: 20rem;
-    border-top: 5px solid #008013;
-    border-bottom: 5px solid #008013;
+    border-top: 0.5rem solid $primary-color;
+    border-bottom: 0.5rem solid $primary-color;
     animation: spin 1s linear infinite;
     border-radius: 100%;
   }
@@ -29,7 +31,7 @@
     font-family: 'IBM Plex Mono', monospace;
 
     &--green {
-      color: #008013;
+      color: $primary-color;
     }
   }
 }

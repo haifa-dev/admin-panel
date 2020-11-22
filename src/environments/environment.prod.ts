@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverUrl: 'https://haifa-dev.herokuapp.com/api/v1',
+  serverUrl: 'https://haifa-dev.herokuapp.com/api/v1'
 };

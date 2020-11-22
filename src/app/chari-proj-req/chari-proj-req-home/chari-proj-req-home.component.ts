@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ChariProjReq } from '../chari-proj-req';
 import { ChariProjReqService } from '../chari-proj-req.service';
@@ -6,7 +6,7 @@ import { ChariProjReqService } from '../chari-proj-req.service';
 @Component({
   selector: 'app-chari-proj-req-home',
   templateUrl: './chari-proj-req-home.component.html',
-  styleUrls: ['./chari-proj-req-home.component.scss'],
+  styleUrls: ['./chari-proj-req-home.component.scss']
 })
 export class ChariProjReqHomeComponent implements OnInit {
   chariProjReqs: ChariProjReq[];

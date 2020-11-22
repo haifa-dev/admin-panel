@@ -6,18 +6,17 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   UrlTree,
-  Router,
+  Router
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { skipWhile, take, tap } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class AuthGuard implements CanLoad {
   constructor(private authService: AuthService, private router: Router) {}
-
   /**
    * when we load the route we don't know if the user done the authentication process
    * DON'T MUTATE THE authenticated& authService Property here.

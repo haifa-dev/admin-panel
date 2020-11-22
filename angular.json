@@ -10,7 +10,7 @@
           "style": "scss"
         }
       },
-      "root": "",
+      "root": "src",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/style/main.scss"
+              "src/styles/main.scss"
             ],
             "scripts": []
           },
@@ -43,7 +43,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -123,6 +122,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "admin-panel"
 }

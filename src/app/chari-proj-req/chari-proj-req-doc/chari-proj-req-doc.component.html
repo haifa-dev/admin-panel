@@ -1,0 +1,16 @@
+<app-proj-req-doc-not-found *ngIf="failed"></app-proj-req-doc-not-found>
+<app-loading-doc *ngIf="loading"></app-loading-doc>
+<div *ngIf="!loading && !failed"
+     class="document">
+  <app-proj-req-header [projectRequest]="chariProjReq"></app-proj-req-header>
+  <div class="document__content">
+    <app-proj-req-section [title]="'about'"
+                          [data]="chariProjReq.about"></app-proj-req-section>
+    <app-proj-req-section [title]="'tasks'"
+                          [data]="chariProjReq.tasks"></app-proj-req-section>
+    <app-proj-req-section [title]="'description'"
+                          [data]="chariProjReq.description"></app-proj-req-section>
+
+    <app-proj-req-attachments [attachments]="attachments"></app-proj-req-attachments>
+  </div>
+</div>

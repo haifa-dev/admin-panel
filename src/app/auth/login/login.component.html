@@ -1,76 +1,43 @@
 <div class="login">
-  <div class="login__header">
-    <div class="login__header__primary">
-      <span class="login__header__primary--green"> haifa</span>:dev
-    </div>
-    <div class="login__header__secondary">developers community</div>
-  </div>
+  <app-login-header></app-login-header>
   <div class="login__content">
-    <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
-      <!-- <label for="login__email"><mat-icon>person_outline</mat-icon>Email</label> -->
+    <form class="form"
+          [formGroup]="form"
+          (ngSubmit)="onSubmit()">
       <mat-form-field appearance="outline">
-        <mat-icon class="prefixed_icon" matPrefix>alternate_email</mat-icon>
+        <mat-icon class="prefixed_icon"
+                  matPrefix>alternate_email</mat-icon>
         <mat-label> Email </mat-label>
-        <input
-          id="login__email"
-          formControlName="email"
-          matInput
-          placeholder="i.e. example@example.com"
-        />
-        <mat-error *ngIf="form.get('email').invalid">{{
-          getErrorMessage(form.get('email'))
+        <input id="login__email"
+               formControlName="email"
+               matInput
+               placeholder="i.e. example@example.com" />
+        <mat-error *ngIf="isInvalid('email')">{{
+          getErrorMessage('email')
         }}</mat-error>
       </mat-form-field>
-      <!-- <label for="login__password"></label><mat-icon>lock_outline</mat-icon> Password</label> -->
       <mat-form-field appearance="outline">
-        <mat-icon class="prefixed_icon" matPrefix>lock_outline</mat-icon>
+        <mat-icon class="prefixed_icon"
+                  matPrefix>lock_outline</mat-icon>
         <mat-label><span>Password</span></mat-label>
-        <input
-          id="login__password"
-          formControlName="password"
-          matInput
-          placeholder="i.e. example@!%$5475347"
-          [type]="hide ? 'password' : 'text'"
-        />
-        <!-- <mat-icon matSuffix>lock_outline</mat-icon> -->
-        <button
-          type="button"
-          mat-icon-button
-          matSuffix
-          (click)="hide = !hide"
-          [attr.aria-label]="'Hide password'"
-          [attr.aria-pressed]="hide"
-        >
+        <input id="login__password"
+               formControlName="password"
+               matInput
+               placeholder="i.e. example@!%$5475347"
+               [type]="hide ? 'password' : 'text'" />
+        <button type="button"
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
           <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
         </button>
-        <mat-error *ngIf="form.get('password').invalid">{{
-          getErrorMessage(form.get('password'))
+        <mat-error *ngIf="isInvalid('password')">{{
+          getErrorMessage(('password'))
         }}</mat-error>
       </mat-form-field>
-      <div class="actions">
-        <button
-          [disabled]="inProgress"
-          type="submit"
-          class="submit-button"
-          color="primary"
-          mat-raised-button
-          style="position: relative"
-        >
-          Log In
-          <span
-            style="
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              z-index: 200;
-              display: inline;
-            "
-          >
-            <mat-spinner [ngClass]="{ hide: !inProgress }" [diameter]="25"></mat-spinner>
-          </span>
-        </button>
-      </div>
+      <app-submit-button [inProgress]="inProgress"></app-submit-button>
     </form>
   </div>
 </div>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ChariProjReqDocComponent } from './chari-proj-req-doc/chari-proj-req-doc.component';
 import { ChariProjReqHomeComponent } from './chari-proj-req-home/chari-proj-req-home.component';
-import { ChariProjReqShowComponent } from './chari-proj-req-show/chari-proj-req-show.component';
 
 const routes: Routes = [
   {
@@ -10,14 +10,14 @@ const routes: Routes = [
     children: [
       {
         path: ':id',
-        component: ChariProjReqShowComponent,
-      },
-    ],
-  },
+        component: ChariProjReqDocComponent
+      }
+    ]
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class ChariProjReqRoutingModule {}

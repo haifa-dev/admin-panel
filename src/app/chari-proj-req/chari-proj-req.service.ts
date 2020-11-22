@@ -15,8 +15,9 @@ export interface ChariProjReqSingularResponse {
   status: string;
 }
 
+
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class ChariProjReqService {
   baseUrl = environment.serverUrl + '/charitableProjectReqs';

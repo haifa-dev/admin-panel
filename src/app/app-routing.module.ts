@@ -6,12 +6,12 @@ const routes: Routes = [
   {
     path: 'dashboard',
     canLoad: [AuthGuard],
-    loadChildren: () => import('./dashboard/dashboard.module').then(mod => mod.DashboardModule),
-  },
+    loadChildren: () => import('./dashboard/dashboard.module').then(mod => mod.DashboardModule)
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}

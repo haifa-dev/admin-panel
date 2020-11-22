@@ -1,12 +1,11 @@
 <div class="dashboard">
-  <app-toolbar [isSmallScreen]="isSmallScreen" (emitMenu)="sideNav.toggle()"></app-toolbar>
+  <app-toolbar [isSmallScreen]="isSmallScreen"
+               (emitMenu)="sideNav.toggle()"></app-toolbar>
   <mat-drawer-container class="dashboard__container">
-    <mat-drawer
-      #sideNav
-      class="sidebar"
-      [mode]="isSmallScreen ? 'side' : 'over'"
-      [opened]="isSmallScreen || menu"
-    >
+    <mat-drawer #sideNav
+                class="sidebar"
+                [mode]="isSmallScreen ? 'side' : 'over'"
+                [opened]="isSmallScreen || menu">
       <app-sidebar></app-sidebar>
     </mat-drawer>
     <mat-drawer-content class="dashboard__container__content">

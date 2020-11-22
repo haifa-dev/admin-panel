@@ -15,7 +15,6 @@ export interface ProfitProjReqSingularResponse {
   status: string;
 }
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -37,6 +36,4 @@ export class ProfitProjReqService {
       .get<ProfitProjReqSingularResponse>(`${this.baseUrl}/${id}`)
       .pipe(pluck('profitableProjectRequest'));
   }
-
-  
 }
