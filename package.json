@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "dev":"ng serve -o",
+    "deploy":"npx vercel --prod",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
